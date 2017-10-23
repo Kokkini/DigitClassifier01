@@ -1,16 +1,18 @@
 import mnist_loader
 training_data, validation_data, test_data = mnist_loader.load_data_wrapper()
 
-import network_blackAndWhite as network
+import network
 import pickle
-
+step = 0.05
+numEpoches = 10
 net = network.Network((784,30,10))
-fileName = 'netBW.pickle'
+fileName = 'netCrossEntropy.pickle'
 file = open(fileName, 'wb')
 pickle.dump(net, file)
 file.close()
-net.SGD_single(training_data, 0.1)
-print net.evaluate(test_data)
+print("net created")
+print("training started")
+net.SGD_single(training_data, test_data, numEpoches, step)
 file = open(fileName, 'wb')
 pickle.dump(net, file)
 file.close()

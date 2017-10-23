@@ -1,10 +1,11 @@
 import numpy as np
 
-a = np.zeros([2,3])
+a = np.array([[3.0],[9.0]])
 
-b = np.matrix(([1,2],[3,4]))
+b = np.array([[1],[2]])
+
 print a
-print b[1,1]
-print "length a:", len(a)
-
-print(np.exp(3))
+print b
+print 1-a
+print a*(1-a)
+print (a-b)/(a*(1-a))

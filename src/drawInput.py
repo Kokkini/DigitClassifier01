@@ -16,7 +16,7 @@ screen = pygame.display.set_mode((canvasSize,canvasSize))
 black = (0,0,0)
 white = (255,255,255)
 
-fileName = 'netBW.pickle'
+fileName = 'netCrossEntropy.pickle'
 file = open(fileName,'rb')
 net = pickle.load(file)
 
